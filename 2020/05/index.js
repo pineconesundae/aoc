@@ -18,7 +18,6 @@ const calculateSeatId = (minRow, maxRow, minSeat, maxSeat, token) => {
       return calculateSeatId(minRow, maxRow, minSeat + add, maxSeat, token.substring(1));
     }
   } else {
-    console.log(minRow, maxRow, minSeat, maxSeat);
     return (maxRow * 8) + maxSeat;
   }
 };
