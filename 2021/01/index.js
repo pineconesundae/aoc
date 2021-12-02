@@ -6,6 +6,8 @@ request(1).then((response) => {
   if (status === 200) {
     const numbers = data.split('\n').filter((number) => number).map((number) => parseInt(number));
 
+    // ---- PART 1 ----
+
     let numIncreases = 0;
 
     numbers.forEach((number, index) => {
@@ -15,6 +17,8 @@ request(1).then((response) => {
     });
 
     console.log(`The answer to part 1 is ${numIncreases}`);
+
+    // ---- PART 2 ----
 
     numIncreases = 0;
 
