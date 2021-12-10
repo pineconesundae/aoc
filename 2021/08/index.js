@@ -1,4 +1,3 @@
-const mean = require('lodash/mean');
 const { request } = require('../util/request');
 
 // Checks if all characters in the target are included in the base
