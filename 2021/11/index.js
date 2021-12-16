@@ -1,38 +1,5 @@
 const { request } = require('../util/request');
 
-// Recursively searches a location and its surrounding locations
-const search = (map, visited, row, col, basinSize) => {
-  const rowMax = map.length - 1;
-  const colMax = map[0].length - 1;
-
-  const height = map[row][col];
-
-  // If our location is a 9 or we have already visited it, just skip over
-  if (height < 9 && visited[row][col] !== '*') {
-    // Mark this location as visited
-    visited[row][col] = '*';
-
-    // Increment the basin size
-    basinSize++;
-
-    // Search up
-    if (row > 0 && visited[row - 1][col] !== '*')
-      basinSize = search(map, visited, row - 1, col, basinSize);
-    // Search right
-    if (col < colMax && visited[row][col + 1] !== '*')
-      basinSize = search(map, visited, row, col + 1, basinSize);
-    // Search down
-    if (row < rowMax && visited[row + 1][col] !== '*')
-      basinSize = search(map, visited, row + 1, col, basinSize);
-    // Search left
-    if (col > 0 && visited[row][col - 1] !== '*')
-      basinSize = search(map, visited, row, col - 1, basinSize);
-  }
-
-  // Return our current basin size from this search
-  return basinSize;
-}
-
 request(11).then((response) => {
   const { data, status } = response;
 
