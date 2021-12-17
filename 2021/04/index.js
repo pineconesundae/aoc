@@ -1,4 +1,3 @@
-const { extendWith } = require('lodash');
 const zip = require('lodash/zip');
 const { request } = require('../util/request');
 
