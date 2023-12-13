@@ -1,0 +1,3 @@
+const session = 'your-secret-goes-here';
+
+module.exports = { session };
